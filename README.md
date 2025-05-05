@@ -104,7 +104,7 @@ Your solution will be evaluated based on:
 2. Clone your forked repository to your local machine
 3. Make regular, meaningful commits as you develop your solution
 4. Push your changes to your forked repository
-5. Once complete, submit the URL of your forked repository
+5. Once complete, submit the URL of your forked repository via replying to the mail.
 
 Your commit history will be reviewed as part of the evaluation, so make sure to commit regularly and include meaningful commit messages that reflect your development process.
 
