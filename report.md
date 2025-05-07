@@ -1,17 +1,13 @@
-## 📄 **Final Report: Predicting Equipment Energy Consumption**
+##  Final Report: Predicting Equipment Energy Consumption
 
-### 📌 **Project Title:**
-
-**Energy Consumption Prediction Using Sensor Data in Industrial Zones**
-
-### 🧹 **Data Preprocessing Summary**
+###  Data Preprocessing Summary
 
 * Removed invalid humidity values (>100%) and replaced them with column means.
 * Dropped rows with missing timestamp features after verification.
 * Outliers were handled using IQR-based filtering and visual analysis.
 * Data contained 20 days of records with varying timestamps (no time pattern observed).
 
-### 📊 **Feature Importance (via Random Forest)**
+###  Feature Importance (via Random Forest)
 
 Top predictors of equipment energy usage:
 
@@ -23,7 +19,7 @@ Top predictors of equipment energy usage:
 
 These features contributed significantly to model accuracy, especially in tree-based models.
 
-### 📈 **Top 10 Correlated Features with Equipment Energy Usage**
+###  Top 10 Correlated Features with Equipment Energy Usage
 
 From Pearson correlation:
 
@@ -40,9 +36,9 @@ From Pearson correlation:
 10. visibility_index:       0.004
 ```
 
-> **Insight**: Correlation coefficients are low overall, suggesting **non-linear dependencies**. This aligns with higher feature importance scores seen in ensemble models.
+> Insight: Correlation coefficients are low overall, suggesting non-linear dependencies. This aligns with higher feature importance scores seen in ensemble models.
 
-### 🔍 **Random Variables**
+### Random Variables
 
 * `random_variable1` and `random_variable2` had:
 
@@ -51,20 +47,20 @@ From Pearson correlation:
 
 > They can be retained for model variety, but are not essential for linear interpretation.
 
-### 🏭 **High-Impact Zones Identified**
+### High-Impact Zones Identified
 
-* **Humidity:**
+* Humidity:
 
   * Zone 5, Zone 8, and Zone 1 are the most significant humidity contributors.
-* **Temperature:**
+* Temperature:
 
   * Zone 2, Zone 3, and Zone 6 have the highest correlation with equipment energy.
 
-> **Recommendation**: Focus on environmental controls in **Zone 5 (humidity)** and **Zone 2 (temperature)** to optimize equipment energy efficiency.
+> Recommendation: Focus on environmental controls in Zone 5 (humidity) and Zone 2 (temperature) to optimize equipment energy efficiency.
 
 ---
 
-### 🤖 **Model Performance Summary**
+### Model Performance Summary
 
 | Model             | MSE       | R² Score |
 | ----------------- | --------- | -------- |
@@ -73,13 +69,13 @@ From Pearson correlation:
 | XGBoost           | 18,698.92 | 0.066    |
 | SVM               | 20,991.61 | -0.048   |
 
-> **Best Model:** Random Forest (lowest MSE and highest R²)
+> Best Model: Random Forest (lowest MSE and highest R²)
 
 ---
 
-### ✅ **Conclusion & Recommendations**
+### Conclusion & Recommendations
 
-* Ensemble models outperform SVM, confirming the dataset’s **nonlinear nature**.
-* Focus on **Zone 2/3 temperatures** for control strategies.
+* Ensemble models outperform SVM, confirming the dataset’s nonlinear nature.
+* Focus on Zone 2/3 temperatures for control strategies.
 * Humidity in Zone 5 and Zone 8 emerged as the most impactful features in Random Forest’s nonlinear predictions, even though their linear correlations with energy usage were weak.
 * Consider retraining with additional data or engineered features (e.g., interaction terms, time-window aggregations) to improve R².
